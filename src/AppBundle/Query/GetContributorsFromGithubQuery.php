@@ -2,13 +2,12 @@
 
 namespace AppBundle\Query;
 
-
 use AppBundle\Dto\ContributorDto;
 use AppBundle\Entity\Search;
 use Github\Client;
 use Github\Exception\RuntimeException;
 
-class GetContributorsQuery
+class GetContributorsFromGithubQuery implements GetContributorsInterface
 {
 
     /**
@@ -17,7 +16,7 @@ class GetContributorsQuery
     private $githubClient;
 
     /**
-     * GetContributorsQuery constructor.
+     * GetContributorsFromGithubQuery constructor.
      * @param Client $githubClient
      */
     public function __construct(Client $githubClient)
@@ -44,6 +43,5 @@ class GetContributorsQuery
             $result[] = new ContributorDto($datum['login'], $datum['avatar_url'], $datum['contributions']);
         }
         return $result;
-
     }
 }

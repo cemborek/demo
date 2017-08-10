@@ -1,5 +1,5 @@
 services:
   app.query.get_contributors_query:
-    class: AppBundle\Query\GetContributorsQuery
+    class: AppBundle\Query\GetContributorsFromGithubQuery
     public: true
     autowire: true

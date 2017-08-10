@@ -50,6 +50,4 @@ class Search
     {
         $this->order = $order;
     }
-
-
 }

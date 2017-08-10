@@ -25,8 +25,7 @@ class FindType extends AbstractType
         $builder
             ->setMethod('GET')
             ->add('repositoryName', TextType::class, ['label' => 'Repository Name'])
-            ->add('save', SubmitType::class, ['label' => 'Search'])
-        ;
+            ->add('save', SubmitType::class, ['label' => 'Search']);
     }
 
     /**

@@ -26,7 +26,7 @@ class HistoryController extends Controller
             10/*limit per page*/
         );
 
-        // replace this example code with whatever you need
+
         return $this->render('default/history.html.twig', [
             'pagination' => $pagination ?? null,
         ]);
