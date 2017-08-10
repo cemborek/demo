@@ -1,0 +1,5 @@
+services:
+  app.repository.search:
+      class: AppBundle\Repository\SearchRepository
+      factory: ['@doctrine.orm.default_entity_manager', getRepository]
+      arguments: ['AppBundle:Search']

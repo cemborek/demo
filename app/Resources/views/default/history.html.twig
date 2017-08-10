@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div class="container">
+
+
+            {% if pagination %}
+                <h3>Search history: {{ pagination.getTotalItemCount }}
+                </h3>
+                <table class="bordered">
+                    <thead>
+                    <tr>
+                        <th>Repository Name</th>
+                        <th>Date</th>
+
+                    </tr>
+                    </thead>
+                    {% for contributor in pagination %}
+                        <tr>
+                            <td>{{ contributor.getRepositoryName() }}</td>
+                            <td>{{ contributor.getCreatedAt() | date('c')}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

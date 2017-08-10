@@ -1,0 +1,6 @@
+services:
+  app.command.log_search:
+    class: AppBundle\Command\LogSearchCommandHandler
+    autowire: true
+    tags:
+        - { name: command_handler, handles: AppBundle\Command\LogSearchCommand }

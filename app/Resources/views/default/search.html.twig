@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div class="container">
+
+            <h1>Welcome to github browser</h1>
+            <p>
+                Example of a valid inputs for the text field are <strong>phalcon/cphalcon</strong> or <strong>laravel/laravel</strong>
+            </p>
+            <p><a href="{{ url('history') }}">Search history </a></p>
+            <div class="form">
+                {{ form(form) }}
+            </div>
+
+
+            {% if pagination %}
+                <h3>Search results: {{ pagination.getTotalItemCount }}
+                </h3>
+                <table class="bordered">
+                    <thead>
+                    <tr>
+                        <th>{{ knp_pagination_sortable(pagination, 'Name', 'a.name') }}</th>
+                        <th>Avatar</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Contributions', 'a.contributions') }}</th>
+                    </tr>
+                    </thead>
+                    {% for contributor in pagination %}
+                        <tr>
+                            <td>{{ contributor.getName() }}</td>
+                            <td><img class="avatar" src="{{ contributor.getAvatar() }}"
+                                     alt="{{ contributor.getName() }} avatar"/></td>
+                            <td>{{ contributor.getContributions() }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
