@@ -4,7 +4,7 @@ services:
     container_name: github-www
 #    build: .
     image: cemborek/demo
-    command: php bin/console server:run 0.0.0.0:80
+    command: php bin/console server:run 0.0.0.0:80 --env=prod
     environment:
       - DB_HOST
       - DB_USER

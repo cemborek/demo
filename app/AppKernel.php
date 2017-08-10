@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
+            new Symfony\Bundle\WebServerBundle\WebServerBundle(),
             new AppBundle\AppBundle(),
         ];
 
@@ -29,7 +30,7 @@ class AppKernel extends Kernel
 
             if ('dev' === $this->getEnvironment()) {
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-                $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
+
             }
         }
 
