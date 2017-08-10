@@ -4,7 +4,7 @@ services:
     container_name: github-www
 #    build: .
     image: cemborek/demo
-    command: php bin/console server:run 0.0.0.0:8080
+    command: php bin/console server:run 0.0.0.0:80
     environment:
       - DB_HOST
       - DB_USER
@@ -12,10 +12,10 @@ services:
       - DB_NAME
 
     ports:
-      - 8080:8080
+      - 80:80
     restart: always
     expose:
-      - 8080
+      - 80
 #    volumes:
 #      - .:/var/www/html
 
